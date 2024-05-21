@@ -15,12 +15,12 @@ class Symbol(Base):
     __tablename__ = 'symbols'
     id = Column(Integer, primary_key=True)
     currency_pair = Column(String, unique=True)  # Example: 'USD/EUR'
-    trades = relationship('Trade', back_populates='symbol')
+    trades = relationship('Trade_log', back_populates='symbols')
 
 class Trade(Base):
     __tablename__ = 'trade_log'
     id = Column(Integer, primary_key=True)
-    symbol_id = Column(Integer, ForeignKey('symbol.id'))
+    symbol_id = Column(Integer, ForeignKey('symbols.id'))
     symbol = relationship(Symbol, back_populates='trades')
     buysell = Column(String, default='Sell')
     lot_size = Column(Integer)

@@ -1,1 +1,45 @@
-Generic single-database configuration.
+# Forex Trade Journal/Tracker CLI App
+# Bridging Experience and Innovation in FinTech
+
+## Overview of CLI Script
+The Forex Trade Journal/Tracker CLI App empowers traders to meticulously document their forex trades while leveraging decades of practical expertise. Whether you’re a seasoned trader or just starting out, this app provides a robust platform for tracking performance metrics, refining strategies, and unlocking insights that bridge the gap between traditional trading and cutting-edge FinTech
+
+## Verion 1.0 Basic Feature
+- **Trade Entry**: Log your trades by inputting essential details such as currency pair, entry/exit price, position size, and trade direction (long or short).
+
+## Version 2.0 Advance Feature
+- **Trade Analysis**: Use the app to analyze your trades based on various criteria, including profitability, time of day, and day of the week.
+- **Chart Analysis**: Add screenshot recordto your entry chart.png, eg. EURUSD_long_entry_2024_05_15_16_00.png link on MQL5.com.
+- **Performance Metrics**: Calculate key metrics like win rate, risk-reward ratio, and average holding time.
+- **Psychological Insights**: Record notes about your emotional state during each trade to identify patterns related to trading success.
+- **Import Trades**: Easily import trades from popular platforms like MetaTrader 4 (MT4), MetaTrader 5 (MT5), and/or cTrader³, and/or TradeView.
+- **Auto-Sync**: The app automatically syncs with your broker accounts, saving you time and ensuring accurate data entry. API Development.
+- **Customisation**: Customise the input fields, add tags, and organise your trades efficiently.
+
+## Installation
+1. Clone this repository: `git clone https://github.com/Artisan-Consulting/python-p3-cli-trade-tracker.git`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the app: `python trade_tracker.py`
+
+## Usage - User interacts with the CLI via a list of menu options
+1. Add a new trade: `python trade_tracker.py add`
+2. View trade history: `python trade_tracker.py list`
+3. Analyse performance: `python trade_tracker.py analyse`
+
+## Important Files
+- `trade_tracker.py`: The main CLI script for recording and analysing trades.
+- `database.py`: Handles data storage and retrieval.
+- `utils.py`: Contains utility functions. (This is to be implemented in future versions).
+
+## Functions
+- `load_trades()`: Loads existing trades from the database.
+- `calculate_metrics()`: Computes trade performance metrics. (Future versions)
+- ...
+
+## Models
+- `Trade`: Represents a single trade with relevant attributes.
+- `PerformanceMetrics`: Stores calculated performance metrics. (Future versions)
+- ...
+
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions, feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/Artisan-Consulting/python-p3-cli-trade-tracker).
