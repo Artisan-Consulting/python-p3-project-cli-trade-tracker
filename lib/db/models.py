@@ -9,10 +9,10 @@ from sqlalchemy import Numeric
 #print(f"Current date and time: {now}")
 
 Base = declarative_base()
-engine = create_engine('sqlite+pysqlite:///trade_tracker.db')
+engine = create_engine('sqlite+pysqlite:///trade_data.db')
 
 class Symbol(Base):
-    __tablename__ = 'symbol'
+    __tablename__ = 'symbols'
     id = Column(Integer, primary_key=True)
     currency_pair = Column(String, unique=True)  # Example: 'USD/EUR'
     trades = relationship('Trade', back_populates='symbol')
@@ -24,10 +24,16 @@ class Trade(Base):
     symbol = relationship(Symbol, back_populates='trades')
     buysell = Column(String, default='Sell')
     lot_size = Column(Integer)
-    #entry_date_time = Column(datatime, default=func.now())
-    #exit_date_time = Column(datetime, default=None)
+    #entry_date_time = Column(DateTime, default=func.now())
+    #exit_date_time = Column(DateTime, default=None)
     entry_price = Column(Numeric(precision=10, scale=6))  # 6 decimal places
     exit_price = Column(Numeric(precision=10, scale=6))  # 6 decimal places
+
+class Account(Base):
+    __tablename__ = 'accounts'
+    id = Column(Integer, primary_key=True)
+    account_number = Column(String, unique=True)
+    trades = relationship('Trade', back_populates='account')
 
 # Create all tables
 Base.metadata.create_all(engine)
